@@ -6,7 +6,8 @@ services:
  web:
   image: web:v1
   container_name: web
-  depends_on: -catalogue
+  depends_on: 
+  - catalogue
   ports:
   - "80:80"
  mongodb:
@@ -15,7 +16,8 @@ services:
  catalogue:
   image: catalogue:v1
   container_name: catalogue
-  depends_on : -mongodb 
+  depends_on:
+  - mongodb 
  Redis:
   image: redis 
  user:
