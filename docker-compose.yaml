@@ -8,6 +8,9 @@ services:
   container_name: web
   depends_on: 
   - catalogue
+  - user
+  - catalogue
+  - cart
   ports:
   - "80:80"
  mongodb:
