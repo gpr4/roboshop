@@ -9,7 +9,6 @@ services:
   depends_on: 
   - catalogue
   - user
-  - catalogue
   - cart
   ports:
   - "80:80"
