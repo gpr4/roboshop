@@ -6,12 +6,15 @@ services:
  web:
   image: web:v1
   container_name: web
+  ports:
+  - "80:80"
   depends_on: 
   - catalogue
   - user
   - cart
-  ports:
-  - "80:80"
+  - mysql
+  - shipping
+
  mongodb:
   image: mongodb:v1
   container_name: mongodb
@@ -34,4 +37,13 @@ services:
   depends_on:
   - redis
   - catalogue
+ mysql:
+  image: mysql:v1
+  container_name: mysql
+ shipping:
+  image: shipping:v1
+  container_name: shipping
+  depends_on:
+  - mysql
+
 
